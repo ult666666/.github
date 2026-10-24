@@ -1,0 +1,40 @@
+name: Bug report
+description: Something doesn't work the way the README or docs say it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for reporting this. Please leave out secrets and personal data.
+        Security vulnerabilities belong in a private report: see the security policy.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of commands or inputs that shows the problem.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: e.g. v0.1.0 or a1b2c3d
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: e.g. macOS 15, Python 3.12, Node 22
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant output
+      description: Error messages or logs, with anything sensitive removed.
+      render: text
