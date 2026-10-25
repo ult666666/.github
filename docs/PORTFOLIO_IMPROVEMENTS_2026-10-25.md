@@ -29,7 +29,12 @@ GitHub CodeQL **default setup** was also enabled for these three repositories, e
 - [contrastkit initial CodeQL run](https://github.com/ult666666/contrastkit/actions/runs/40232495598)
 - [ledgerline initial CodeQL run](https://github.com/ult666666/ledgerline/actions/runs/40232498712)
 
-Check each run's current status before claiming analysis passed or that findings were resolved. Secret scanning and push protection were already enabled in these three repositories. LineageGuard already had CodeQL default setup and Dependabot security updates enabled before this pilot.
+All three initial CodeQL analysis runs completed successfully on 2026-10-25. This confirms the scanner executed, **not** that the projects have no vulnerabilities. Ledgerline had two open high-severity CodeQL findings relating to SHA-256 bearer-key fingerprints; the [security review issue](https://github.com/ult666666/ledgerline/issues/4) remains open and no alert was dismissed. Secret scanning and push protection were already enabled in these three repositories. LineageGuard already had CodeQL default setup and Dependabot security updates enabled before this pilot.
+
+## Additional security hardening
+
+- [Ledgerline PR #5](https://github.com/ult666666/ledgerline/pull/5) added a cryptographically random 32-byte bearer-key generator, CLI tests, and explicit documentation of the risks of weak demo keys and stable client fingerprints. Local tests: 169 passed; GitHub CI passed Python 3.12/3.13, PostgreSQL 17, image smoke and CodeQL. The two original CodeQL findings remain open for design review.
+- [Luma Keys security review #1](https://github.com/ult666666/luma-keys/issues/1) tracks the observed disabled secret scanning/push protection settings and the need for a scoped review before enabling them. No setting was changed there.
 
 ## Explicit boundaries and next review
 
