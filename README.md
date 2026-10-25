@@ -14,3 +14,7 @@ Default contributing guide, security policy, support guide, code of conduct, and
 ## Continuous portfolio maintenance
 
 The [public portfolio maintenance playbook](docs/PORTFOLIO_MAINTENANCE.md) defines weekly, monthly and quarterly evidence reviews. A [read-only scheduled audit](.github/workflows/portfolio-health.yml) inventories public repository metadata and generates dated Markdown/JSON artifacts; it does not change repositories or assert that a workflow has passed.
+
+## Verified improvement log
+
+The [2026-10-25 public portfolio improvement log](docs/PORTFOLIO_IMPROVEMENTS_2026-10-25.md) records completed repository changes, CI evidence, security configuration checks, explicit boundaries and the next review.
